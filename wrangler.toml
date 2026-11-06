@@ -1,0 +1,17 @@
+name = "nest-nibble"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Menyajikan index.html (taruh di folder ./public) + API di /api/* dalam satu alamat
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nest-nibble-db"
+database_id = "058828b2-3f91-4ccf-b33e-034f7de30218"
+
+# Token rahasia dipasang dengan:  npx wrangler secret put API_TOKEN
+# (opsional) batasi origin:  [vars]  ALLOWED_ORIGIN = "https://domain-anda.com"
